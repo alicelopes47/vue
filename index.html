@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <title>Aprendendo VUE</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ name }}</h1> 
+
+    <h1>{{total1}}</h1>
+    <button @click="total1++">+</button>
+    <button @click="total1--">-</button>
+  </br>
+  <h1>{{total2}}</h1>
+  <button @click="total2++">+</button>
+  <button @click="total2--">-</button>
+  <h1>totais multiplicados: {{total1 * total2}}</h1>
+  </div>
+
+  <script> 
+    const vm = new Vue(
+      {
+      el: '#app', // qual elemento do DOM o VUE vai funcionar.
+      data: { // todas as variáveis que o VUE vai controlar (variáveis reativas)
+        name: 'Anime Lompras da Silva',
+        age: 24, // as duas chaves são para dizer que é uma variável reativa
+        total1: 0,
+        total2: 0,
+        result: 0
+      }
+    }
+    )
+
+    vm.name = 'Aloce Lopes' //podemos trocar os stados sem precisar de hooks, usando a forma nativa do js
+
+    
+    
+
+    console.log(vm);
+  </script>
+</body>
+</html>
